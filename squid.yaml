@@ -1,0 +1,19 @@
+manifestVersion: subsquid.io/v0.1
+name: multichain-transfers-squid
+version: 1
+description: 'A squid that indexes USDC transfers on ETH and BSC'
+build: 
+deploy:
+  addons:
+    postgres: 
+  processor:
+    - name: moonbeam-processor
+      cmd: [ "sqd", "process:prod:moonbeam" ]
+      env:
+        RPC_ENDPOINT_MOONBEAM: ${{ secrets.RPC_ENDPOINT_MOONBEAM }}
+    - name: astar-processor
+      cmd: [ "sqd", "process:prod:astar" ]
+      env:
+        RPC_ENDPOINT_ASTAR: ${{ secrets.RPC_ENDPOINT_ASTAR }}
+  api:
+    cmd: [ "sqd", "serve:prod" ]

@@ -1,0 +1,68 @@
+
+
+type CancelAllOrders @entity {
+  id: ID!
+  user: String!
+  newMinNonce: BigInt!
+  timestamp:BigInt!
+  chainId: String!
+}
+
+type CancelMultipleOrders @entity {
+  id: ID!
+  user: String!
+  orderNonces: [Int!]
+  timestamp:BigInt!
+    chainId: String!
+}
+
+type RoyaltyPayment @entity {
+  id: ID!
+  collection: String!
+  tokenId: BigInt!
+  royaltyRecipient: String!
+  currency: String!
+  amount: BigInt!
+  timestamp:BigInt!
+    chainId: String!
+}
+
+
+type TakerAsk @entity {
+  id: ID!
+  orderHash: String!
+  orderNonce: BigInt!
+  taker: String!
+  maker: String!
+  strategy: String!
+	currency: String!
+  collection: String!
+  tokenId: BigInt!
+  amount: BigInt!
+  price: BigInt!
+  timestamp:BigInt!
+  transactionHash: String!
+  block: BigInt!
+    chainId: String!
+}
+
+type TakerBid @entity {
+  id: ID!
+  orderHash: String!
+  orderNonce: BigInt!
+  taker: String!
+  maker: String!
+  strategy: String!
+	currency: String!
+  collection: String!
+  tokenId: BigInt!
+  amount: BigInt!
+  price: BigInt!
+  timestamp:BigInt!
+  transactionHash: String!
+  block: BigInt!
+    chainId: String!
+}
+
+
+
