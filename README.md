@@ -1,8 +1,8 @@
-# Multichain transfers squid
+# Multichain squid
 
-This [squid](https://docs.subsquid.io/) captures USDC Transfer events on ETH and BSC, stores them in the same database and serves the data over a common GraphQL API.
+This squid captures TakerAsk, TakerBid, Royalty Payments, CancelOrderNonce, and Cancel Multiple Nonces events for the Dotsama NFT Marketplace on ASTAR and MOONBEAM, stores them in the same database and serves the data over a common GraphQL API.
 
-The Ethereum processor is located in `src/eth` and similarly the Binance Chain processor can be found in `src/bsc`. The scripts file `commands.json` was updated with the commands `process:eth` and `process:bsc` to run the processors. 
+The Astar processor is located in `src/astar` and similarly the Moonbeam processor can be found in `src/moonbeam`. The scripts file `commands.json` was updated with the commands `process:astar` and `process:moonbeam` to run the processors. 
 
 You can find some useful hints on developing multichain squids on the [dedicated documentation page](https://docs.subsquid.io/basics/multichain/).
 
